@@ -1,15 +1,17 @@
-﻿using AuthService.Domain.Models;
+﻿using AuthService.Domain.Entries;
 
 namespace AuthService.Domain.Abstractions;
 
 /// <summary>
-/// Базовый репозиторий
+/// Репозиторий работы с пользователями
 /// </summary>
 public interface IUserRepository
 {
     /// <summary>
-    /// Добавить объект User в бд
+    /// Полчение пользователя
     /// </summary>
-    /// <param name="model">Объект для добавления</param>
-    Task<Guid> Create(User model);
+    /// <param name="id"> ID пользователя. </param>
+    /// <param name="cancellationToken"> Токен отмены </param>
+    /// <returns> Пользователь </returns>
+    Task<User> GetAsync(string id, CancellationToken cancellationToken);
 }

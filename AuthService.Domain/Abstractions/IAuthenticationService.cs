@@ -1,16 +1,17 @@
-﻿using AuthService.Domain.Models;
+﻿using AuthServiceContracts.User;
 
 namespace AuthService.Domain.Abstractions;
 
 /// <summary>
-/// Сервис для аутентификации и регистрации пользователей
+/// Интерфейс сервиса работы с пользователями
 /// </summary>
 public interface IAuthenticationService
 {
     /// <summary>
-    /// Возвращает ID пользователя
+    /// Получить пользователя 
     /// </summary>
-    /// <param name="user">Модель данных пользователя</param>
-    /// <returns>ID</returns>
-    Task<Guid> Login(User user);
+    /// <param name="id"> ID пользователя </param>
+    /// <param name="cancellationToken"> Токен отмены </param>
+    /// <returns> ДТО логина юзера </returns>
+    Task<UserDto> Login(string id, CancellationToken cancellationToken);
 }

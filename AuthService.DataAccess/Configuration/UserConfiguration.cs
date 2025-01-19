@@ -1,12 +1,12 @@
-﻿using AuthService.DataAccess.Models;
+﻿using AuthService.Domain.Entries;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AuthService.DataAccess.Configuration;
 
-internal class UserConfiguration : IEntityTypeConfiguration<UserEntitiy>
+internal class UserConfiguration : IEntityTypeConfiguration<User>
 {
-    public void Configure(EntityTypeBuilder<UserEntitiy> builder)
+    public void Configure(EntityTypeBuilder<User> builder)
     {
         builder.HasKey(id => id.Id);
 
@@ -33,9 +33,9 @@ internal class UserConfiguration : IEntityTypeConfiguration<UserEntitiy>
             .IsRequired();
 
         builder.HasData(
-            new UserEntitiy
+            new User
             {
-                Id = Guid.NewGuid(),
+                Id = Guid.NewGuid().ToString(),
                 Name = "Иван",
                 Login = "Ivan",
                 Email = "ivan@gmail.com",
@@ -43,9 +43,9 @@ internal class UserConfiguration : IEntityTypeConfiguration<UserEntitiy>
                 CreatedAt = DateTime.Now,
                 IsActive = true
             },
-            new UserEntitiy
+            new User
             {
-                Id = Guid.NewGuid(),
+                Id = Guid.NewGuid().ToString(),
                 Name = "Маша",
                 Login = "Masha",
                 Email = "masha@gmail.com",

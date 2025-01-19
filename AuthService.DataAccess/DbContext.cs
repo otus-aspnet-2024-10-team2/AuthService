@@ -1,14 +1,14 @@
-﻿using AuthService.DataAccess.Models;
+﻿using AuthService.Domain.Entries;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 namespace AuthService.DataAccess;
 
-public class AuthServiceDbContext : DbContext
+public class UserDbContext : DbContext
 {
-    public DbSet<UserEntitiy> Users {  get; set; }
+    public DbSet<User> Users {  get; set; }
 
-    public AuthServiceDbContext(DbContextOptions<AuthServiceDbContext> options)
+    public UserDbContext(DbContextOptions<UserDbContext> options)
     : base(options)
     {
         Database.EnsureCreated();
