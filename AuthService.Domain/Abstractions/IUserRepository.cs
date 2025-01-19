@@ -1,22 +1,17 @@
-﻿using AuthService.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AuthService.Domain.Entries;
 
-namespace AuthService.DataAccess.Repository
+namespace AuthService.Domain.Abstractions;
+
+/// <summary>
+/// Репозиторий работы с пользователями
+/// </summary>
+public interface IUserRepository
 {
     /// <summary>
-    /// Базовый репозиторий
+    /// Полчение пользователя
     /// </summary>
-    /// <typeparam name="TEntity">Сущность</typeparam>
-    public interface IUserRepository
-    { 
-        /// <summary>
-        /// Добавить объект User в бд
-        /// </summary>
-        /// <param name="model">Объект для добавления</param>
-        Task<Guid> Create(User model);
-    }
+    /// <param name="id"> ID пользователя. </param>
+    /// <param name="cancellationToken"> Токен отмены </param>
+    /// <returns> Пользователь </returns>
+    Task<User> GetAsync(string id, CancellationToken cancellationToken);
 }
