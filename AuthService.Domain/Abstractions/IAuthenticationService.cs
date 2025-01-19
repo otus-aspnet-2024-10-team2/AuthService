@@ -1,17 +1,16 @@
 ﻿using AuthService.Domain.Models;
 
-namespace AuthService.Application.Authentication.Services
+namespace AuthService.Domain.Abstractions;
+
+/// <summary>
+/// Сервис для аутентификации и регистрации пользователей
+/// </summary>
+public interface IAuthenticationService
 {
     /// <summary>
-    /// Сервис для аутентификации и регистрации пользователей
+    /// Возвращает ID пользователя
     /// </summary>
-    public interface IAuthenticationService
-    {
-        /// <summary>
-        /// Возвращает ID пользователя
-        /// </summary>
-        /// <param user >Модель данных авторизации</param>
-        /// <returns>ID</returns>
-        Task<Guid> Login(User user);
-    }
+    /// <param name="user">Модель данных пользователя</param>
+    /// <returns>ID</returns>
+    Task<Guid> Login(User user);
 }

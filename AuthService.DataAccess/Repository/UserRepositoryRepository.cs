@@ -1,35 +1,31 @@
 ﻿using AuthService.DataAccess.Models;
+using AuthService.Domain.Abstractions;
 using AuthService.Domain.Models;
-using Microsoft.EntityFrameworkCore;
 
-namespace AuthService.DataAccess.Repository
+namespace AuthService.DataAccess.Repository;
+
+public class UserRepository(AuthServiceDbContext dbContext) : IUserRepository
 {
-    public class UserRepository: IUserRepository
+    private readonly AuthServiceDbContext _dbContext = dbContext;
+
+    public async Task<Guid> Create(User model)
     {
-        private readonly AuthServiceDbContext _dbContext;
+        ArgumentNullException.ThrowIfNull(model);
 
-        public UserRepository(AuthServiceDbContext dbContext)
+        var user = new UserEntitiy
         {
-            _dbContext = dbContext;
-        }
-        public async Task<Guid> Create(User model)
-        {
-            if (model is null) throw new ArgumentNullException(nameof(model));
+            Id = model.Id,
+            Name = model.Name,
+            Login = model.Login,
+            Email = model.Email,
+            PasswordHash = model.PasswordHash,
+            CreatedAt = model.CreatedAt,
+            IsActive = model.IsActive,
+        };
 
-            var user = new UserEntitiy
-            {
-                Id = model.Id,
-                Name = model.Name,
-                Login = model.Login,
-                Email = model.Email,
-                PasswordHash = model.PasswordHash,
-                CreatedAt = model.CreatedAt,
-                IsActive = model.IsActive,
-            };
-            await _dbContext.Users.AddAsync(user);
-            await _dbContext.SaveChangesAsync();
+        await _dbContext.Users.AddAsync(user);
+        await _dbContext.SaveChangesAsync();
 
-            return user.Id;
-        }
+        return user.Id;
     }
 }

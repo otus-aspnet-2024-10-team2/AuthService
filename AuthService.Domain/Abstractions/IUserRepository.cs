@@ -1,22 +1,15 @@
 ﻿using AuthService.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace AuthService.DataAccess.Repository
+namespace AuthService.Domain.Abstractions;
+
+/// <summary>
+/// Базовый репозиторий
+/// </summary>
+public interface IUserRepository
 {
     /// <summary>
-    /// Базовый репозиторий
+    /// Добавить объект User в бд
     /// </summary>
-    /// <typeparam name="TEntity">Сущность</typeparam>
-    public interface IUserRepository
-    { 
-        /// <summary>
-        /// Добавить объект User в бд
-        /// </summary>
-        /// <param name="model">Объект для добавления</param>
-        Task<Guid> Create(User model);
-    }
+    /// <param name="model">Объект для добавления</param>
+    Task<Guid> Create(User model);
 }
