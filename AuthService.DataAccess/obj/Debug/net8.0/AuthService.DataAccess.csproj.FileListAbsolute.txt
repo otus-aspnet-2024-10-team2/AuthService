@@ -1,0 +1,17 @@
+C:\Users\Professional\source\repos\AuthService\AuthService.DataAccess\obj\Debug\net8.0\AuthService.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Professional\source\repos\AuthService\AuthService.DataAccess\obj\Debug\net8.0\AuthService.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Professional\source\repos\AuthService\AuthService.DataAccess\obj\Debug\net8.0\AuthService.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Professional\source\repos\AuthService\AuthService.DataAccess\obj\Debug\net8.0\AuthService.DataAccess.AssemblyInfo.cs
+C:\Users\Professional\source\repos\AuthService\AuthService.DataAccess\obj\Debug\net8.0\AuthService.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Professional\source\repos\AuthService\AuthService.DataAccess\bin\Debug\net8.0\AuthService.DataAccess.deps.json
+C:\Users\Professional\source\repos\AuthService\AuthService.DataAccess\bin\Debug\net8.0\AuthService.DataAccess.dll
+C:\Users\Professional\source\repos\AuthService\AuthService.DataAccess\bin\Debug\net8.0\AuthService.DataAccess.pdb
+C:\Users\Professional\source\repos\AuthService\AuthService.DataAccess\bin\Debug\net8.0\AuthService.Domain.dll
+C:\Users\Professional\source\repos\AuthService\AuthService.DataAccess\bin\Debug\net8.0\AuthService.Domain.pdb
+C:\Users\Professional\source\repos\AuthService\AuthService.DataAccess\obj\Debug\net8.0\AuthServ.8451F24E.Up2Date
+C:\Users\Professional\source\repos\AuthService\AuthService.DataAccess\obj\Debug\net8.0\AuthService.DataAccess.dll
+C:\Users\Professional\source\repos\AuthService\AuthService.DataAccess\obj\Debug\net8.0\refint\AuthService.DataAccess.dll
+C:\Users\Professional\source\repos\AuthService\AuthService.DataAccess\obj\Debug\net8.0\AuthService.DataAccess.pdb
+C:\Users\Professional\source\repos\AuthService\AuthService.DataAccess\obj\Debug\net8.0\ref\AuthService.DataAccess.dll
+C:\Users\Professional\source\repos\AuthService\AuthService.DataAccess\bin\Debug\net8.0\AuthService.DataAccess.runtimeconfig.json
+C:\Users\Professional\source\repos\AuthService\AuthService.DataAccess\obj\Debug\net8.0\AuthService.DataAccess.genruntimeconfig.cache
