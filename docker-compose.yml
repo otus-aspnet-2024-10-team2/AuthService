@@ -1,0 +1,38 @@
+﻿version: "3.0"
+
+services:
+
+# Базы данных 
+   postgresauth:
+    image: postgres:latest
+    container_name: postgresauth
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 8n5nb7mf
+      POSTGRES_DB: authServiceDb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    networks:
+      - auth-network
+    command: ["postgres", "-c", "listen_addresses=*"]
+
+# Админ-панели для БД        
+   pgadminauth:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: miiradiiaz@gmail.com 
+      PGADMIN_DEFAULT_PASSWORD: DiazMD9119          
+    ports:
+      - "5050:80"  
+    networks:
+      - auth-network
+    depends_on:
+      - "postgresauth"
+volumes:
+  pg-data:
+
+networks:
+  auth-network: 
+    driver: bridge 

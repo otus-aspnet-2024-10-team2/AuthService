@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AuthService.DataAccess.Repository;
 
-public class UserRepository(UserDbContext context) : Repository<User, string>(context), IUserRepository
+public class UserRepository(AuthDbContext context) : Repository<User, string>(context), IUserRepository
 {
 
     /// <summary>

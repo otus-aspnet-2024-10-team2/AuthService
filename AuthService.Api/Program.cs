@@ -1,3 +1,4 @@
+using AuthService.Api;
 using AuthService.Api.Mapping;
 using AuthService.Application.Mapping;
 using AuthService.Application.Services;
@@ -14,11 +15,7 @@ builder.Services.AddHealthChecks();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<UserDbContext>(
-    optons =>
-    {
-        optons.UseSqlite(builder.Configuration.GetConnectionString(nameof(UserDbContext)));
-    });
+builder.Services.AddDbContextWithConfigurations();
 
 builder.Services.AddSingleton<IMapper>(
     new Mapper(
@@ -30,8 +27,7 @@ builder.Services.AddSingleton<IMapper>(
     )
 );
 
-builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddServices();
 
 var app = builder.Build();
 

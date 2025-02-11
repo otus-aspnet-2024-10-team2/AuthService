@@ -33,10 +33,23 @@ public class User : IEntity<string>
     /// <summary>
     /// Дата регистрации
     /// </summary>
-    public DateTime CreatedAt { get; set; }
+    public DateTimeOffset CreatedAt { get; set; }
 
     /// <summary>
     /// Активен ли пользователь
     /// </summary>
     public bool IsActive { get; set; }
+
+    /// <summary>
+    /// Навигационное свойство
+    /// </summary>
+    public virtual List<RefreshTokens> RefreshTokens { get; set; } = [];
+    /// <summary>
+    /// Внешний ключ на Role
+    /// </summary>
+    public string? RoleId { get; set; }
+    /// <summary>
+    /// Навигационное свойство
+    /// </summary>
+    public virtual Role? Role { get; set; }
 }
